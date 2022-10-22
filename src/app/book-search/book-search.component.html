@@ -1,0 +1,16 @@
+<div class="row mb-3" >
+<h1>Rechercher</h1>
+<form (ngSubmit)="getSearch(f)" #f="ngForm">
+  <div class="mb-3">
+    <label for="seach" class="form-label">Titre</label>
+    <input type="text" id="search" class="form-control" name="search" ngModel required #s="ngModel" />
+    <div *ngIf="s.invalid && s.touched" class="alert alert-danger" role="alert">
+      Ce champ est obligatoire!
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-primary" [disabled]="f.invalid">Valider</button>
+  </div>
+</form>
+</div>
+<app-book-list [titreAChercher]="searchTerm"></app-book-list>

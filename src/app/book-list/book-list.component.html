@@ -1,4 +1,5 @@
-<button class="btn btn-success">Ajouter un livre</button>
+<div class="row mb-3">
+<button class="btn btn-success col-3" >Ajouter un livre</button>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -11,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let book of listBooks">
+    <tr *ngFor="let book of filteredListBooks()">
       <th scope="row">{{book.id}}</th>
       <td>{{book.titre}}</td>
       <td>{{book.auteur}}</td>
@@ -21,3 +22,4 @@
     </tr>
   </tbody>
 </table>
+</div>
