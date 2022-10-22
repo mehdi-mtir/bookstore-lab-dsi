@@ -24,3 +24,5 @@
   </tbody>
 </table>
 </div>
+
+<app-book-add [id]="listBooks[listBooks.length - 1].id + 1" (newBookAdded)="addNewBook($event)"></app-book-add>

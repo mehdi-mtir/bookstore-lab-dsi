@@ -14,7 +14,7 @@ export class BookSearchComponent implements OnInit {
   }
 
   getSearch(f : NgForm){
-    this.searchTerm = f.value.search;
+    this.searchTerm = f.value.search.toLowerCase();
     console.log(this.searchTerm);
   }
 

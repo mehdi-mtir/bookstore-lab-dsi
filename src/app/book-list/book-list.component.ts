@@ -18,12 +18,16 @@ export class BookListComponent implements OnInit {
   filteredListBooks() : Book[]{
     if(this.titreAChercher != ""){
       return this.listBooks.filter(
-        book=>book.titre == this.titreAChercher
+        book=>book.titre.toLowerCase().indexOf(this.titreAChercher) != -1
       )
     }
     else{
       return this.listBooks;
     }
+  }
+
+  addNewBook(book : Book){
+    this.listBooks.push(book);
   }
 
   constructor() { }
